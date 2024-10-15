@@ -73,7 +73,7 @@ export default function Contact() {
       <div className={classes.contact__container}>
         {!formSubmitted ? (
           <div className={classes.contact__form__container}>
-            <h3>Skontaktuj się z nami</h3>
+            <h2>Skontaktuj się z nami</h2>
             <form onSubmit={sendMail}>
               <div>
                 <label htmlFor="name">Imię i nazwisko:</label>

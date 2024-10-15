@@ -9,10 +9,12 @@
 }
 
 .contact__container h3,
+.contact__container h2,
 .thanks__message__container h4 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 2.5rem;
+  letter-spacing: normal;
 }
 
 .contact__form__container {
