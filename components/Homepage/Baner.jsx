@@ -38,8 +38,8 @@ export default function Baner() {
         </div>
 
         <div className={classes.buttons__container}>
-          <Button link="#" text="O mnie" />
-          <Button link="#" text="Czytaj wiecej" />
+          <Button link="#Twórczość" text="Twórczość" />
+          <Button link="#Wystawy" text="Wystawy" />
         </div>
       </section>
     </>

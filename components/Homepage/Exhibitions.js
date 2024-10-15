@@ -2,7 +2,7 @@ import classes from "./Exhibitions.module.css";
 
 export default function Exhibitions() {
   return (
-    <section className={classes.exhibitions__container}>
+    <section className={classes.exhibitions__container} id="Wystawy">
       <h2>Wystawy</h2>
       <ul>
         <li>

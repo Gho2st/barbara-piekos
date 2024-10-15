@@ -84,7 +84,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section className={classes.portfolio__container}>
+    <section className={classes.portfolio__container} id="Twórczość">
       <h2>Twórczość</h2>
       <div className={classes.content__container}>
         <LightGallery

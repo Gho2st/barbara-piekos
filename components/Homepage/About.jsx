@@ -20,7 +20,7 @@ export default function About() {
             />
           </div>
           <div>
-            <span>Barbara Piękoś</span>
+            <span id="O-mnie">Barbara Piękoś</span>
             <p>
               Urodzona w 1993 roku w Nowym Sączu.<br></br> <br></br> W 2020 roku
               ukończyła Akademię Sztuk Pięknych w Krakowie.
