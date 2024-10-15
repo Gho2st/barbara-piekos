@@ -2,6 +2,7 @@
   text-align: center;
   font-size: 1.5rem;
   padding-bottom: 2rem;
+  position: relative;
 }
 
 .footer::before {
@@ -16,6 +17,18 @@
 .footer a {
   color: #34433c;
   font-weight: bold;
+}
+
+.footer span {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  opacity: 1;
+}
+
+.footer span:hover {
+  cursor: pointer;
+  color: #34433c;
 }
 
 @media (max-width: 600px) {
