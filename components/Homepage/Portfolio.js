@@ -108,6 +108,9 @@ export default function Portfolio() {
             ))}
           </Slider>
         </LightGallery>
+        <p className={classes.description}>
+          *Kliknij w zdjęcie aby zobaczyć pełnoekranowy podgląd
+        </p>
       </div>
     </section>
   );
