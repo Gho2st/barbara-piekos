@@ -51,4 +51,10 @@
     padding: 4rem 0%;
     padding-bottom: 2rem;
   }
+  .slider img {
+    padding: 1rem;
+    min-height: 500px;
+    object-fit: cover;
+    max-height: 500px;
+  }
 }
