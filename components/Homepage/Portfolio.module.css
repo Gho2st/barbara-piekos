@@ -1,0 +1,54 @@
+.portfolio__container {
+  min-height: 100vh;
+  padding: 4rem 0%;
+}
+
+.content__container {
+  padding: 0rem 9%;
+}
+
+.portfolio__container h2 {
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.portfolio__container h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #e9e9e9; /* szary kolor linii */
+  margin-top: 3rem;
+}
+.slider {
+  width: 100%;
+  margin-top: 4rem;
+}
+.slider img {
+  padding: 1rem;
+  min-height: 600px;
+  object-fit: cover;
+  max-height: 600px;
+}
+
+.slider img:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .portfolio__container h2 {
+    padding: 0rem 6%;
+    font-size: 2.6rem;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio__container h2 {
+    font-size: 2.3rem;
+  }
+  .portfolio__container {
+    padding: 4rem 0%;
+    padding-bottom: 2rem;
+  }
+}

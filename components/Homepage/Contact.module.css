@@ -1,0 +1,127 @@
+.contact__container_wrapper {
+  padding: 7rem 9%;
+}
+
+.contact__container {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.contact__container h3,
+.thanks__message__container h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.contact__form__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact__form__container form input {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 0.3rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-size: 16px;
+}
+
+.contact__form__container form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 0.3rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-size: 16px;
+}
+
+.contact__form__container form input::placeholder {
+  font-size: 1rem;
+}
+
+.contact__info__container {
+  width: 100%;
+}
+
+.contact__info__container ul {
+  list-style-type: none;
+}
+
+.contact__info__item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.contact__info__item svg {
+  font-size: 2.3rem;
+  margin-right: 1rem;
+}
+
+.contact__info__item p,
+.contact__info__item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.contact__container__form__button__container {
+  margin-top: 1rem;
+}
+
+/* thanks message container */
+
+.thanks__message__container {
+  width: 100%;
+}
+.thanks__message__container p {
+  font-size: 1.3rem;
+}
+
+/* errors */
+
+.errorMessage {
+  color: rgba(255, 0, 0, 0.952);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .contact__container_wrapper {
+    padding: 4rem 9%;
+  }
+  .contact__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .contact__container h2,
+  .contact__container h3,
+  .thanks__message__container h4 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .contact__info__item li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact__info__item svg {
+    font-size: 1.6rem;
+  }
+  .contact__info__item p,
+  .contact__info__item a {
+    font-size: 1.3rem;
+  }
+  .contact__container_wrapper {
+    padding: 4rem 9%;
+    padding-bottom: 1rem;
+  }
+}
