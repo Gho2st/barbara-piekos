@@ -97,12 +97,18 @@ export default function Portfolio() {
         >
           <Slider {...settings} className={classes.slider}>
             {images.map((image, index) => (
-              <a key={index} className={"slick__slide"} data-src={image}>
+              <a
+                key={index}
+                href={image}
+                className={"slick__slide"}
+                data-src={image}
+              >
                 <Image
                   src={image}
                   width={100}
                   height={100}
                   layout="responsive"
+                  alt={`Obraz ${index + 1}`}
                 />
               </a>
             ))}

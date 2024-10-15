@@ -11,7 +11,7 @@ export default function Baner() {
         <div className={classes.image__container__desktop}>
           <Image
             src={"/baner.png"}
-            alt="Baner Desktop"
+            alt="Baner w postaci obrazu wykonanego przez autorkę Barbarę Piękoś"
             width={100}
             height={100}
             layout="responsive"
@@ -22,7 +22,7 @@ export default function Baner() {
         <div className={classes.image__container__mobile}>
           <Image
             src={"/obrazy/2.jpeg"}
-            alt="Baner Mobile"
+            alt="Baner w postaci obrazu wykonanego przez autorkę Barbarę Piękoś"
             width={100}
             height={100}
             layout="responsive"
@@ -33,6 +33,7 @@ export default function Baner() {
             src={"/moja natura.png"}
             width={100}
             height={100}
+            alt="Odręczny napis 'moja natura'"
             layout="responsive"
           />
         </div>
