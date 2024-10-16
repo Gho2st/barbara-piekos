@@ -21,7 +21,7 @@ export default function Baner() {
         {/* Obraz dla wersji mobilnej */}
         <div className={classes.image__container__mobile}>
           <Image
-            src={"/obrazy/2.jpeg"}
+            src={"/obrazy/3.jpeg"}
             alt="Baner w postaci obrazu wykonanego przez autorkę Barbarę Piękoś"
             width={100}
             height={100}
@@ -38,10 +38,10 @@ export default function Baner() {
           />
         </div>
 
-        <div className={classes.buttons__container}>
-          <Button link="#Twórczość" text="Twórczość" />
-          <Button link="#Wystawy" text="Wystawy" />
-        </div>
+        {/* <div className={classes.buttons__container}>
+          <Button link="#twórczość" text="Twórczość" />
+          <Button link="#wystawy" text="Wystawy" />
+        </div> */}
       </section>
     </>
   );

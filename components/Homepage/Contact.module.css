@@ -5,13 +5,13 @@
 .contact__container {
   display: flex;
   justify-content: center;
-  gap: 8rem;
+  gap: 15rem;
 }
 
 .contact__container h3,
 .contact__container h2,
 .thanks__message__container h4 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2.5rem;
   letter-spacing: normal;
@@ -20,12 +20,13 @@
 .contact__form__container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 85%;
 }
 .contact__form__container form input {
   padding: 0.8rem 1rem;
   border: 1px solid rgb(225, 225, 225);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: rgb(234, 234, 234);
   border-radius: 0.3rem;
   width: 100%;
   margin-bottom: 1rem;
@@ -37,6 +38,7 @@
   padding: 0.8rem 1rem;
   border: 1px solid rgb(225, 225, 225);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: rgb(234, 234, 234);
   border-radius: 0.3rem;
   width: 100%;
   margin-bottom: 1rem;
@@ -62,7 +64,7 @@
 }
 
 .contact__info__item svg {
-  font-size: 2.3rem;
+  font-size: 2rem;
   margin-right: 1rem;
 }
 
@@ -71,7 +73,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
 .contact__container__form__button__container {
@@ -92,6 +94,12 @@
 .errorMessage {
   color: rgba(255, 0, 0, 0.952);
   font-weight: 600;
+}
+
+@media (max-width: 1500px) {
+  .contact__container {
+    gap: 14rem;
+  }
 }
 
 @media (max-width: 900px) {

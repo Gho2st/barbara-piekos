@@ -30,6 +30,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.lg-backdrop {
+  background-color: white !important;
+}
+
 .slick-prev:before,
 .slick-next:before {
   color: #664343 !important;

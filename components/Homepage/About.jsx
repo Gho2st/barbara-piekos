@@ -12,18 +12,27 @@ export default function About() {
         <div className={classes.content__container}>
           <div className={classes.image__container}>
             <Image
-              src={"/portret-barbara.png"}
+              src={"/autoportet.png"}
               width={100}
               height={100}
               layout="responsive"
               alt="auportret namalowany przez autorkę strony Barbarę Piękoś"
             />
           </div>
-          <div>
-            <span>Barbara Piękoś</span>
+          <div className={classes.text__container}>
             <p>
-              Urodzona w 1993 roku w Nowym Sączu.<br></br> <br></br> W 2020 roku
-              ukończyła Akademię Sztuk Pięknych w Krakowie.
+              <span>Barbara Piękoś</span> urodziła się 18 czerwca 1993 roku w
+              Nowym Sączu. Wraz ze swoimi rodzicami oraz trzema siostrami
+              mieszkała w małym drewnianym domku w pięknej wsi Podolu-Górowej.
+              <br></br>
+              <br></br> Lata dzieciństwa spędzała wśród drzew i skał. Talent i
+              wsparcie, jakie otrzymała od swoich rodziców sprawiły, że mogła
+              uczyć się w Liceum Plastycznym, a w późniejszych latach spełnić
+              marzenie o Akademii Sztuk Pięknych im. Jana Matejki w Krakowie. W
+              2020 roku ukończyła studia będąc na wydziale malarstwa w pracowni
+              Janusza Matuszewskiego. <br></br><br></br> Obecnie nadal mieszka na Sądeczyźnie, a
+              malując obraz ma przy sobie dwóch synków oraz męża, który wspiera
+              i jest jej siłą.
             </p>
             <div className={classes.button__container}>
               <Button text="Kontakt" link="/#kontakt" />

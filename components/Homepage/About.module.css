@@ -7,7 +7,7 @@
 .about__container h2 {
   text-align: center;
   padding-top: 3rem;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -25,50 +25,73 @@
   margin-top: 4rem;
   display: flex;
   justify-content: center;
-  gap: 8rem;
-  padding: 0rem 9%;
+  gap: 10rem;
 }
 
 .image__container {
-  width: 30%;
+  width: 23%;
+}
+
+.text__container {
+  width: 28%;
 }
 
 .content__container span {
-  font-size: 2.3rem;
   font-weight: bold;
 }
 
 .content__container p {
-  margin-top: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .button__container {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
+  .content__container {
+    gap: 8rem;
+  }
+  .text__container {
+    width: 30%;
+  }
+  .content__container p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1260px) {
   .image__container {
-    width: 50%;
+    width: 30%;
+  }
+  .text__container {
+    width: 35%;
+  }
+  .content__container {
+    gap: 5rem;
   }
 }
 
 @media (max-width: 900px) {
   .content__container {
-    gap: 5rem;
+    gap: 2rem;
     flex-direction: column;
+    justify-content: center;
+    padding: 0rem 9%;
   }
 
   .image__container {
     margin: auto;
+    width: 50%;
   }
-  .content__container span {
-    font-size: 2rem;
+
+  .text__container {
+    width: 100%;
   }
 
   .content__container p {
     margin-top: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 

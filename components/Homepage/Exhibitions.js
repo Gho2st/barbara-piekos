@@ -13,8 +13,13 @@ export default function Exhibitions() {
           <h3>Animals IV</h3> Krowoderska Biblioteka Publiczna <br></br>{" "}
           (Kraków) 2016
           <br></br>
-          <span>Blask na drzewach jakiś chory(...) Zaczęły się meteory</span>
         </li>
+        <li>
+          <h3>Blask na drzewach jakiś chory(...) Zaczęły się meteory</h3>{" "}
+          Galeria Sztuki Willa Kadenówka <br></br> (Rabka-Zdrój) 2016
+          <br></br>
+        </li>
+
         <li>
           <h3>Sztuka Młodych z ASP</h3> Muzeum Okręgowe <br></br> (Sandomierz)
           2016

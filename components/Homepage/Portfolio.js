@@ -42,8 +42,6 @@ export default function Portfolio() {
     "/obrazy/21.jpeg",
     "/obrazy/22.jpeg",
     "/obrazy/23.jpeg",
-    "/obrazy/24.jpeg",
-    "/obrazy/25.jpeg",
   ];
 
   const settings = {

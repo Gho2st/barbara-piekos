@@ -82,7 +82,6 @@ export default function Contact() {
                   id="name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Twoje imię i nazwisko"
                   style={{
                     border: errorFields.includes("fullName")
                       ? "1px solid red"
@@ -97,7 +96,6 @@ export default function Contact() {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Twój adres e-mail"
                   style={{
                     border: errorFields.includes("email")
                       ? "1px solid red"
@@ -112,7 +110,6 @@ export default function Contact() {
                   id="phone"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder="Twój numer telefonu"
                   style={{
                     border: errorFields.includes("phoneNumber")
                       ? "1px solid red"
@@ -126,7 +123,6 @@ export default function Contact() {
                   id="message"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  placeholder="Twoja wiadomość"
                   style={{
                     border: errorFields.includes("text")
                       ? "1px solid red"
