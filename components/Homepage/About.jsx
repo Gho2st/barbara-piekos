@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className={classes.about__container}>
+    <section className={classes.about__container} id="o-mnie">
       <h2>
         Portretuję <br></br>Poszukuję w ciszy
       </h2>
@@ -20,7 +20,7 @@ export default function About() {
             />
           </div>
           <div>
-            <span id="O-mnie">Barbara Piękoś</span>
+            <span>Barbara Piękoś</span>
             <p>
               Urodzona w 1993 roku w Nowym Sączu.<br></br> <br></br> W 2020 roku
               ukończyła Akademię Sztuk Pięknych w Krakowie.
