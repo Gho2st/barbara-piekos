@@ -16,7 +16,7 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://www.beatapiekos.pl/",
+    url: "https://www.barbarapiekos.pl/",
     title: "Barbara Piękoś – Oficjalne Portfolio Artystyczne",
     description:
       "Zapraszam do świata malarstwa i sztuki Barbary Piękoś. Zobacz wybrane prace, poznaj biografię artystki i jej dotychczasowe wystawy. Skontaktuj się i odkryj więcej o jej artystycznej podróży.",
