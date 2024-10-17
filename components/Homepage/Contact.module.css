@@ -98,7 +98,16 @@
 
 @media (max-width: 1500px) {
   .contact__container {
-    gap: 14rem;
+    gap: 13rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contact__form__container {
+    width: 90%;
+  }
+  .contact__container {
+    gap: 10rem;
   }
 }
 
@@ -110,6 +119,9 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+  }
+  .contact__form__container {
+    width: 100%;
   }
   .contact__container h2,
   .contact__container h3,
