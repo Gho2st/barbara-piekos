@@ -35,6 +35,27 @@ a {
   background-color: white !important;
 }
 
+.lg-outer .lg-thumb-outer {
+  background-color: white !important;
+}
+
+.lg-counter {
+  display: none !important;
+}
+
+.lg-sub-html {
+  color: rgb(159, 159, 159) !important;
+}
+
+.lg-next,
+.lg-prev {
+  color: #ffffff !important;
+}
+
+.lg-toolbar .lg-icon {
+  color: black !important;
+}
+
 .slick-prev:before,
 .slick-next:before {
   color: #664343 !important;

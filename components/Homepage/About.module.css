@@ -33,7 +33,7 @@
 }
 
 .text__container {
-  width: 28%;
+  width: 25%;
 }
 
 .content__container span {
@@ -41,7 +41,7 @@
 }
 
 .content__container p {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 .button__container {
@@ -53,10 +53,10 @@
     gap: 8rem;
   }
   .text__container {
-    width: 30%;
+    width: 28%;
   }
   .content__container p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -69,6 +69,15 @@
   }
   .content__container {
     gap: 5rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .image__container {
+    width: 35%;
+  }
+  .text__container {
+    width: 38%;
   }
 }
 
