@@ -30,13 +30,10 @@ export default function About() {
               uczyć się w Liceum Plastycznym, a w późniejszych latach spełnić
               marzenie o Akademii Sztuk Pięknych im. Jana Matejki w Krakowie. W
               2020 roku ukończyła studia będąc na wydziale malarstwa w pracowni
-              Janusza Matuszewskiego. <br></br><br></br> Obecnie nadal mieszka na Sądeczyźnie, a
-              malując obraz ma przy sobie dwóch synków oraz męża, który wspiera
-              i jest jej siłą.
+              Janusza Matuszewskiego. <br></br>
+              <br></br> Obecnie nadal mieszka na Sądeczyźnie, a malując obraz ma
+              przy sobie dwóch synków oraz męża, który wspiera i jest jej siłą.
             </p>
-            <div className={classes.button__container}>
-              <Button text="Kontakt" link="/#kontakt" />
-            </div>
           </div>
         </div>
       </div>

@@ -45,7 +45,8 @@
 
 .open__menu__container li {
   margin-top: 1.5rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .open__menu__container li:hover {
@@ -58,5 +59,11 @@
   }
   .navigation__button {
     margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .open__menu__container li {
+    font-size: 1.3rem;
   }
 }

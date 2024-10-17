@@ -44,7 +44,10 @@ a {
 }
 
 .lg-sub-html {
-  color: rgb(159, 159, 159) !important;
+  display: none !important;
+}
+.lg-download {
+  display: none !important;
 }
 
 .lg-next,
