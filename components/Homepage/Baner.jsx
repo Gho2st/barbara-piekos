@@ -6,12 +6,7 @@ import Image from "next/image";
 
 export default function Baner() {
   return (
-    <motion.section
-      className={classes.baner__container}
-      initial={{ opacity: 0 }} // Początkowy stan (niewidoczny)
-      animate={{ opacity: 1 }} // Animacja (fade-in)
-      transition={{ duration: 1.2 }} // Czas trwania animacji
-    >
+    <section className={classes.baner__container}>
       {/* Animowany nagłówek */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }} // Start (niewidoczny, przesunięty w górę)
@@ -22,12 +17,7 @@ export default function Baner() {
       </motion.h1>
 
       {/* Obraz dla wersji komputerowej */}
-      <motion.div
-        className={classes.image__container__desktop}
-        initial={{ opacity: 0, x: -100 }} // Start (niewidoczny, przesunięty w lewo)
-        animate={{ opacity: 1, x: 0 }} // Animacja (przesunięcie na miejsce)
-        transition={{ duration: 1.2, delay: 0.8 }} // Opóźnienie
-      >
+      <div className={classes.image__container__desktop}>
         <Image
           src={"/baner.png"}
           alt="Baner w postaci obrazu wykonanego przez autorkę Barbarę Piękoś"
@@ -35,15 +25,10 @@ export default function Baner() {
           height={100}
           layout="responsive"
         />
-      </motion.div>
+      </div>
 
       {/* Obraz dla wersji mobilnej */}
-      <motion.div
-        className={classes.image__container__mobile}
-        initial={{ opacity: 0, x: -100 }} // Start (niewidoczny, przesunięty w lewo)
-        animate={{ opacity: 1, x: 0 }} // Animacja (przesunięcie na miejsce)
-        transition={{ duration: 1.2, delay: 1 }} // Opóźnienie
-      >
+      <div className={classes.image__container__mobile}>
         <Image
           src={"/obrazy/3.jpeg"}
           alt="Baner w postaci obrazu wykonanego przez autorkę Barbarę Piękoś"
@@ -51,7 +36,7 @@ export default function Baner() {
           height={100}
           layout="responsive"
         />
-      </motion.div>
+      </div>
 
       {/* Napis */}
       <div className={classes.image__text__container}>
@@ -63,6 +48,6 @@ export default function Baner() {
           layout="responsive"
         />
       </div>
-    </motion.section>
+    </section>
   );
 }
