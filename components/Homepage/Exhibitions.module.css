@@ -50,13 +50,10 @@
 @media (max-width: 768px) {
   .exhibitions__container h2 {
     padding: 0rem 6%;
-    font-size: 2.6rem;
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 600px) {
-  .exhibitions__container h2 {
-    font-size: 2.3rem;
-  }
   .exhibitions__container ul {
     grid-template-columns: 1fr;
     padding: 4rem 9%;
