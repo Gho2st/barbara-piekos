@@ -69,109 +69,115 @@ export default function Contact() {
   };
 
   return (
-    <div className={classes.contact__container_wrapper} id="kontakt">
-      <div className={classes.contact__container}>
-        {!formSubmitted ? (
-          <div className={classes.contact__form__container}>
-            <h2>Skontaktuj się ze mną</h2>
-            <form onSubmit={sendMail}>
-              <div>
-                <label htmlFor="name">Imię i nazwisko:</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  style={{
-                    border: errorFields.includes("fullName")
-                      ? "1px solid red"
-                      : "0",
-                  }}
-                />
-              </div>
-              <div>
-                <label htmlFor="email">Adres e-mail:</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  style={{
-                    border: errorFields.includes("email")
-                      ? "1px solid red"
-                      : "0",
-                  }}
-                />
-              </div>
-              <div>
-                <label htmlFor="phone">Twój numer telefonu:</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  style={{
-                    border: errorFields.includes("phoneNumber")
-                      ? "1px solid red"
-                      : "0",
-                  }}
-                />
-              </div>
-              <div>
-                <label htmlFor="message">Wiadomość:</label>
-                <textarea
-                  id="message"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                  style={{
-                    border: errorFields.includes("text")
-                      ? "1px solid red"
-                      : "0",
-                  }}
-                />
-              </div>
-              {formError && <p className={classes.errorMessage}>{formError}</p>}
-              <div
-                className={classes.contact__container__form__button__container}
-              >
-                <ButtonSubmit text="Wyślij" />
-              </div>
-            </form>
+    <section>
+      <div className={classes.contact__container_wrapper} id="kontakt">
+        <div className={classes.contact__container}>
+          {!formSubmitted ? (
+            <div className={classes.contact__form__container}>
+              <h2>Skontaktuj się ze mną</h2>
+              <form onSubmit={sendMail}>
+                <div>
+                  <label htmlFor="name">Imię i nazwisko:</label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    style={{
+                      border: errorFields.includes("fullName")
+                        ? "1px solid red"
+                        : "0",
+                    }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email">Adres e-mail:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{
+                      border: errorFields.includes("email")
+                        ? "1px solid red"
+                        : "0",
+                    }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone">Twój numer telefonu:</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    style={{
+                      border: errorFields.includes("phoneNumber")
+                        ? "1px solid red"
+                        : "0",
+                    }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message">Wiadomość:</label>
+                  <textarea
+                    id="message"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    style={{
+                      border: errorFields.includes("text")
+                        ? "1px solid red"
+                        : "0",
+                    }}
+                  />
+                </div>
+                {formError && (
+                  <p className={classes.errorMessage}>{formError}</p>
+                )}
+                <div
+                  className={
+                    classes.contact__container__form__button__container
+                  }
+                >
+                  <ButtonSubmit text="Wyślij" />
+                </div>
+              </form>
+            </div>
+          ) : (
+            <div className={classes.thanks__message__container}>
+              <h4>Dziękujemy za wiadomość!</h4>
+              <p>
+                Cieszymy się, że się z nami skontaktowałeś. Odezwę się do Ciebie
+                najszybciej, jak to możliwe. Zazwyczaj odpowiadam w ciągu 24
+                godzin.
+              </p>
+            </div>
+          )}
+          <div className={classes.contact__info__container}>
+            <h3>Dane kontaktowe</h3>
+            <ul>
+              <li>
+                <div className={classes.contact__info__item}>
+                  <MdOutlineEmail />
+                  <p>barbarapiekos00@gmail.com</p>
+                </div>
+              </li>
+              <li>
+                <div className={classes.contact__info__item}>
+                  <IoLocationOutline />
+                  <p>33-395 Chełmiec</p>
+                </div>
+              </li>
+              <li>
+                <div className={classes.contact__info__item}>
+                  <LuPhone />
+                  <Link href="tel:+48787184487">(+48) 787 184 487 </Link>
+                </div>
+              </li>
+            </ul>
           </div>
-        ) : (
-          <div className={classes.thanks__message__container}>
-            <h4>Dziękujemy za wiadomość!</h4>
-            <p>
-              Cieszymy się, że się z nami skontaktowałeś. Odezwę się do Ciebie
-              najszybciej, jak to możliwe. Zazwyczaj odpowiadam w ciągu 24
-              godzin.
-            </p>
-          </div>
-        )}
-        <div className={classes.contact__info__container}>
-          <h3>Dane kontaktowe</h3>
-          <ul>
-            <li>
-              <div className={classes.contact__info__item}>
-                <MdOutlineEmail />
-                <p>barbarapiekos00@gmail.com</p>
-              </div>
-            </li>
-            <li>
-              <div className={classes.contact__info__item}>
-                <IoLocationOutline />
-                <p>33-395 Chełmiec</p>
-              </div>
-            </li>
-            <li>
-              <div className={classes.contact__info__item}>
-                <LuPhone />
-                <Link href="tel:+48787184487">(+48) 787 184 487 </Link>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
