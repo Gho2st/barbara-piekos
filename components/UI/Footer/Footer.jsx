@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import classes from "./Footer.module.css";
 import { FaArrowUp } from "react-icons/fa";
@@ -18,6 +18,11 @@ export default function Footer() {
     <footer className={classes.footer}>
       &copy; {currentYear} Barbara Piękoś. Projekt i realizacja{" "}
       <Link href={"https://dominikjojczyk.pl/"}>Dominik</Link>
+      <div className={classes.policy}>
+        <a href="/polityka_prywatnosci_bp.pdf" target="_blank">
+          Polityka Prywatności
+        </a>
+      </div>
       <span onClick={scrollToTop} className={classes.arrow}>
         <FaArrowUp />
       </span>

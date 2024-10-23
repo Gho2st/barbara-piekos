@@ -31,6 +31,10 @@
   color: #34433c;
 }
 
+.policy {
+  margin-top: 1rem;
+}
+
 @media (max-width: 600px) {
   .footer {
     text-align: center;
