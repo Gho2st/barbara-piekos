@@ -94,6 +94,7 @@
 .errorMessage {
   color: rgba(255, 0, 0, 0.952);
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 1500px) {
