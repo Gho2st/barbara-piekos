@@ -1,6 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
-import Button from "../UI/Buttons/Button";
 import classes from "./Baner.module.css";
 import Image from "next/image";
 
@@ -8,13 +6,7 @@ export default function Baner() {
   return (
     <section className={classes.baner__container}>
       {/* Animowany nagłówek */}
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }} // Start (niewidoczny, przesunięty w górę)
-        animate={{ opacity: 1, y: 0 }} // Animacja (pojawienie i przesunięcie na miejsce)
-        transition={{ duration: 1.2, delay: 0.5 }} // Opóźnienie
-      >
-        Barbara Piękoś
-      </motion.h1>
+      <h1>Barbara Piękoś</h1>
 
       {/* Obraz dla wersji komputerowej */}
       <div className={classes.image__container__desktop}>
