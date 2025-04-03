@@ -5,9 +5,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import { LuPhone } from "react-icons/lu";
 import Button from "../UI/Buttons/Button";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ButtonSubmit from "../UI/Buttons/ButtonSubmit";
-import { useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
@@ -18,40 +17,37 @@ export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState(null);
   const [errorFields, setErrorFields] = useState([]);
-  const recaptchaRef = useRef(null); // Ref dla reCAPTCHA
+  const [isSending, setIsSending] = useState(false);
+  const recaptchaRef = useRef(null);
 
   const sendMail = async (e) => {
     e.preventDefault();
-    const fieldsToCheck = {
-      fullName,
-      email,
-      phoneNumber,
-      text,
-    };
+    setIsSending(true);
+    setFormError(null);
+
+    const fieldsToCheck = { fullName, email, phoneNumber, text };
     const emptyFields = Object.entries(fieldsToCheck)
-      .filter(([key, value]) => !value)
+      .filter(([_, value]) => !value)
       .map(([key]) => key);
     setErrorFields(emptyFields);
 
     if (emptyFields.length > 0) {
       setFormError("Proszę uzupełnij wszystkie wymagane pola.");
-      return;
-    }
-    // Pobranie tokena reCAPTCHA
-    const recaptchaToken = recaptchaRef.current.getValue();
-    if (!recaptchaToken) {
-      setFormError("Proszę zaznacz, że nie jesteś robotem przed wysłaniem.");
+      setIsSending(false);
       return;
     }
 
-    // console.log("Wysyłanie danych:", { ...formData, recaptchaToken }); // Dodaj logowanie danych
+    const recaptchaToken = recaptchaRef.current.getValue();
+    if (!recaptchaToken) {
+      setFormError("Proszę zaznacz, że nie jesteś robotem przed wysłaniem.");
+      setIsSending(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
+        headers: { "content-type": "application/json" },
         body: JSON.stringify({
           text,
           fullName,
@@ -62,23 +58,20 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        console.log("Form submitted succesfully");
         setFormSubmitted(true);
-        setFormError(null);
         setEmail("");
-        setFullName(fieldsToCheck.fullName);
+        setFullName("");
         setText("");
         setPhoneNumber("");
-        onFormSubmit();
-        recaptchaRef.current.reset(); // Zresetuj CAPTCHA po wysłaniu
+        recaptchaRef.current.reset();
       } else {
         const errorData = await response.json();
-        setFormError(`Error: ${errorData.message}`);
+        setFormError(`Błąd: ${errorData.message}`);
       }
     } catch (error) {
-      console.error("Unexpected error:", error);
-      setFormError("Unexpected error occurred.");
+      setFormError("Wystąpił nieoczekiwany błąd.");
     }
+    setIsSending(false);
   };
 
   return (
@@ -150,14 +143,17 @@ export default function Contact() {
                 <ReCAPTCHA
                   className="mt-4"
                   ref={recaptchaRef}
-                  sitekey="6LetqpUqAAAAABRwX_slcBybtlkC7S4X4QZZEYUo" // Wstaw swój Site Key
+                  sitekey="6LetqpUqAAAAABRwX_slcBybtlkC7S4X4QZZEYUo"
                 />
                 <div
                   className={
                     classes.contact__container__form__button__container
                   }
                 >
-                  <ButtonSubmit text="Wyślij" />
+                  <ButtonSubmit
+                    text={isSending ? "Wysyłanie..." : "Wyślij"}
+                    disabled={isSending}
+                  />
                 </div>
               </form>
             </div>
@@ -165,9 +161,8 @@ export default function Contact() {
             <div className={classes.thanks__message__container}>
               <h4>Dziękujemy za wiadomość!</h4>
               <p>
-                Cieszymy się, że się z nami skontaktowałeś. Odezwę się do Ciebie
-                najszybciej, jak to możliwe. Zazwyczaj odpowiadam w ciągu 24
-                godzin.
+                Cieszymy się, że się z nami skontaktowałeś. Odezwę się
+                najszybciej jak to możliwe.
               </p>
             </div>
           )}
@@ -189,7 +184,7 @@ export default function Contact() {
               <li>
                 <div className={classes.contact__info__item}>
                   <LuPhone />
-                  <Link href="tel:+48787184487">(+48) 787 184 487 </Link>
+                  <Link href="tel:+48787184487">(+48) 787 184 487</Link>
                 </div>
               </li>
             </ul>
