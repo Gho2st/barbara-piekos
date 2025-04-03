@@ -43,6 +43,32 @@ export default function Portfolio() {
     "/obrazy/22.jpeg",
   ];
 
+  // Alt tags array
+  const altTags = [
+    "Malarstwo Barbary Piękoś - obraz 1 z portfolio artystki",
+    "Barbara Piękoś - obraz 2, twórczość artystyczna z Sądecczyzny",
+    "Praca Barbary Piekos - obraz 3, malarstwo współczesne",
+    "Barbara Piękoś - obraz 4, autoportret w ciszy",
+    "Malarstwo Barbary Piękoś - obraz 5, natura i inspiracja",
+    "Barbara Piekos - obraz 6, sztuka z ASP Kraków",
+    "Twórczość Barbary Piękoś - obraz 7, pejzaż emocji",
+    "Barbara Piękoś - obraz 8, portret namalowany ręką artystki",
+    "Malarstwo Barbary Piekos - obraz 9, wizja mojej natury",
+    "Barbara Piękoś - obraz 10, sztuka inspirowana dzieciństwem",
+    "Praca Barbary Piękoś - obraz 11, malarstwo z duszą",
+    "Barbara Piekos - obraz 12, twórczość z Nowego Sącza",
+    "Malarstwo Barbary Piękoś - obraz 13, poszukiwania w ciszy",
+    "Barbara Piękoś - obraz 14, sztuka współczesna artystki",
+    "Twórczość Barbary Piekos - obraz 15, portrety i natura",
+    "Barbara Piękoś - obraz 16, malarstwo z Sądecczyzny",
+    "Barbara Piekos - obraz 17, inspiracja codziennością",
+    "Malarstwo Barbary Piękoś - obraz 18, artystyczna wizja",
+    "Barbara Piękoś - obraz 19, portret mojej natury",
+    "Praca Barbary Piekos - obraz 20, sztuka z ASP Kraków",
+    "Barbara Piękoś - obraz 21, malarstwo pełne emocji",
+    "Twórczość Barbary Piękoś - obraz 22, ostatnia praca w portfolio",
+  ];
+
   const settings = {
     infinite: true,
     speed: 700,
@@ -105,7 +131,7 @@ export default function Portfolio() {
                   width={100}
                   height={100}
                   layout="responsive"
-                  alt={`Obraz ${index + 1}`}
+                  alt={altTags[index]}
                 />
               </a>
             ))}
