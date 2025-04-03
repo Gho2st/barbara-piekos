@@ -68,7 +68,7 @@
     font-size: 1.8rem;
   }
   .exhibitions__container h3 {
-    padding-top: 2.5rem;
+    padding-top: 3rem;
     padding-bottom: 1rem;
     font-size: 1.3rem;
   }
@@ -77,7 +77,7 @@
   }
   .exhibitions__container ul {
     padding: 0rem 9%;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
     margin-top: 1rem;
     grid-template-columns: 1fr;
   }
