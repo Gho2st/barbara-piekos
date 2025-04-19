@@ -19,7 +19,7 @@ export default function Footer() {
       &copy; {currentYear} Barbara Piękoś. Projekt i realizacja{" "}
       <Link href={"https://domiweb.pl/"}>Domiweb</Link>
       <div className={classes.policy}>
-        <a href="/polityka_prywatnosci_bp.pdf" target="_blank">
+        <a href="/polityka-prywatnosci.pdf" target="_blank">
           Polityka Prywatności
         </a>
       </div>
