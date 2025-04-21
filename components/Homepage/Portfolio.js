@@ -1,18 +1,21 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import classes from "./Portfolio.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Lightbox2 imports
-import lightbox from "lightbox2";
-import "lightbox2/dist/css/lightbox.min.css";
+// PhotoSwipe imports
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/photoswipe.css";
 
 // Next.js Image component
 import Image from "next/image";
 
 export default function Portfolio() {
+  const lightboxRef = useRef(null);
+  const [imageDimensions, setImageDimensions] = useState({});
+
   // Images array
   const images = [
     "/obrazy/1.jpeg",
@@ -65,17 +68,48 @@ export default function Portfolio() {
     "Ostatni obraz Barbary Piękoś - portfolio 22",
   ];
 
-  // Initialize Lightbox2
+  // Fetch image dimensions using browser Image API
   useEffect(() => {
-    lightbox.option({
-      resizeDuration: 200,
-      wrapAround: true, // Loop through images
-      disableScrolling: true, // Prevent page scrolling when lightbox is open
+    const fetchDimensions = async () => {
+      const dimensions = {};
+      const baseUrl = window.location.origin;
+      for (const image of images) {
+        try {
+          const img = new window.Image();
+          img.src = `${baseUrl}${image}`;
+          await new Promise((resolve, reject) => {
+            img.onload = () => resolve();
+            img.onerror = () => reject(new Error(`Failed to load ${image}`));
+          });
+          dimensions[image] = {
+            width: img.naturalWidth,
+            height: img.naturalHeight,
+          };
+        } catch (error) {
+          console.error(`Error fetching dimensions for ${image}:`, error);
+          dimensions[image] = { width: 1200, height: 800 };
+        }
+      }
+      setImageDimensions(dimensions);
+    };
+
+    fetchDimensions();
+  }, []);
+
+  // Initialize PhotoSwipe
+  useEffect(() => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: `.${classes.slider}`,
+      children: "a",
+      pswpModule: () => import("photoswipe"),
     });
 
-    // Cleanup (optional, Lightbox2 doesn't require explicit destroy)
+    lightbox.init();
+    lightboxRef.current = lightbox;
+
+    // Cleanup on component unmount
     return () => {
-      // No specific cleanup needed for Lightbox2
+      lightbox.destroy();
     };
   }, []);
 
@@ -120,24 +154,27 @@ export default function Portfolio() {
       <h2>Twórczość</h2>
       <div className={classes.content__container}>
         <Slider {...settings} className={classes.slider}>
-          {images.map((image, index) => (
-            <a
-              key={index}
-              href={image}
-              data-lightbox="gallery" // Lightbox2 uses this attribute to group images
-              data-title={altTags[index]} // Optional: Use alt tag as caption
-              className="lightbox-gallery__item"
-            >
-              <Image
-                src={image}
-                width={100}
-                height={100}
-                layout="responsive"
-                alt={altTags[index]}
-                quality={100} // Ensure high quality for thumbnails
-              />
-            </a>
-          ))}
+          {images.map((image, index) => {
+            const { width = 1200, height = 800 } = imageDimensions[image] || {};
+            return (
+              <a
+                key={index}
+                href={image}
+                className="pswp-gallery__item"
+                data-pswp-width={width}
+                data-pswp-height={height}
+              >
+                <Image
+                  src={image}
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  alt={altTags[index]}
+                  quality={100}
+                />
+              </a>
+            );
+          })}
         </Slider>
         <p className={classes.description}>
           *Kliknij w zdjęcie aby zobaczyć pełnoekranowy podgląd
