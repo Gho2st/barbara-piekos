@@ -1,20 +1,18 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import classes from "./Portfolio.module.css";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; // Import Slick styles
-import "slick-carousel/slick/slick-theme.css"; // Import Slick theme styles
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// PhotoSwipe imports
-import PhotoSwipeLightbox from "photoswipe/lightbox";
-import "photoswipe/photoswipe.css";
+// Lightbox2 imports
+import lightbox from "lightbox2";
+import "lightbox2/dist/css/lightbox.min.css";
 
 // Next.js Image component
 import Image from "next/image";
 
 export default function Portfolio() {
-  const lightboxRef = useRef(null);
-
   // Images array
   const images = [
     "/obrazy/1.jpeg",
@@ -67,6 +65,20 @@ export default function Portfolio() {
     "Ostatni obraz Barbary Piękoś - portfolio 22",
   ];
 
+  // Initialize Lightbox2
+  useEffect(() => {
+    lightbox.option({
+      resizeDuration: 200,
+      wrapAround: true, // Loop through images
+      disableScrolling: true, // Prevent page scrolling when lightbox is open
+    });
+
+    // Cleanup (optional, Lightbox2 doesn't require explicit destroy)
+    return () => {
+      // No specific cleanup needed for Lightbox2
+    };
+  }, []);
+
   const settings = {
     infinite: true,
     speed: 700,
@@ -103,23 +115,6 @@ export default function Portfolio() {
     ],
   };
 
-  // Initialize PhotoSwipe
-  useEffect(() => {
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: `.${classes.slider}`,
-      children: "a",
-      pswpModule: () => import("photoswipe"),
-    });
-
-    lightbox.init();
-    lightboxRef.current = lightbox;
-
-    // Cleanup on component unmount
-    return () => {
-      lightbox.destroy();
-    };
-  }, []);
-
   return (
     <section className={classes.portfolio__container} id="twórczość">
       <h2>Twórczość</h2>
@@ -129,9 +124,9 @@ export default function Portfolio() {
             <a
               key={index}
               href={image}
-              className="pswp-gallery__item"
-              data-pswp-width="1200" // Adjust based on actual image dimensions
-              data-pswp-height="800" // Adjust based on actual image dimensions
+              data-lightbox="gallery" // Lightbox2 uses this attribute to group images
+              data-title={altTags[index]} // Optional: Use alt tag as caption
+              className="lightbox-gallery__item"
             >
               <Image
                 src={image}
@@ -139,6 +134,7 @@ export default function Portfolio() {
                 height={100}
                 layout="responsive"
                 alt={altTags[index]}
+                quality={100} // Ensure high quality for thumbnails
               />
             </a>
           ))}

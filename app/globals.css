@@ -65,12 +65,3 @@ a {
   font-size: 1.5rem !important;
 }
 
-/* photo swipe */
-.pswp__img--placeholder--blank {
-  display: none !important;
-}
-
-.pswp img {
-  max-width: none !important;
-  object-fit: contain !important;
-}
