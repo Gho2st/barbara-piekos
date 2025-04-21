@@ -13,6 +13,8 @@
     "lightgallery": "^2.7.2",
     "next": "14.2.15",
     "nodemailer": "^6.9.15",
+    "photoswipe": "^5.4.4",
+    "probe-image-size": "^7.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",

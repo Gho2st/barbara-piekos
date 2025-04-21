@@ -1,17 +1,15 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import classes from "./Portfolio.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; // Import Slick styles
 import "slick-carousel/slick/slick-theme.css"; // Import Slick theme styles
 
-// LightGallery imports
-import LightGallery from "lightgallery/react";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-thumbnail.css";
+// PhotoSwipe imports
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/photoswipe.css";
 
-// Plugins
-import lgThumbnail from "lightgallery/plugins/thumbnail";
+// Next.js Image component
 import Image from "next/image";
 
 export default function Portfolio() {
@@ -78,7 +76,6 @@ export default function Portfolio() {
     autoplaySpeed: 5000,
     cssEase: "linear",
     initialSlide: 0,
-
     responsive: [
       {
         breakpoint: 1500,
@@ -106,37 +103,46 @@ export default function Portfolio() {
     ],
   };
 
+  // Initialize PhotoSwipe
+  useEffect(() => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: `.${classes.slider}`,
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+    lightboxRef.current = lightbox;
+
+    // Cleanup on component unmount
+    return () => {
+      lightbox.destroy();
+    };
+  }, []);
+
   return (
     <section className={classes.portfolio__container} id="twórczość">
       <h2>Twórczość</h2>
       <div className={classes.content__container}>
-        <LightGallery
-          selector={".slick__slide"}
-          speed={500}
-          plugins={[lgThumbnail]} // Enable thumbnail plugin
-          onInit={(detail) => {
-            lightboxRef.current = detail.instance; // Assign LightGallery instance to ref
-          }}
-        >
-          <Slider {...settings} className={classes.slider}>
-            {images.map((image, index) => (
-              <a
-                key={index}
-                href={image}
-                className={"slick__slide"}
-                data-src={image}
-              >
-                <Image
-                  src={image}
-                  width={100}
-                  height={100}
-                  layout="responsive"
-                  alt={altTags[index]}
-                />
-              </a>
-            ))}
-          </Slider>
-        </LightGallery>
+        <Slider {...settings} className={classes.slider}>
+          {images.map((image, index) => (
+            <a
+              key={index}
+              href={image}
+              className="pswp-gallery__item"
+              data-pswp-width="1200" // Adjust based on actual image dimensions
+              data-pswp-height="800" // Adjust based on actual image dimensions
+            >
+              <Image
+                src={image}
+                width={100}
+                height={100}
+                layout="responsive"
+                alt={altTags[index]}
+              />
+            </a>
+          ))}
+        </Slider>
         <p className={classes.description}>
           *Kliknij w zdjęcie aby zobaczyć pełnoekranowy podgląd
         </p>
