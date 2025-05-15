@@ -16,8 +16,7 @@ export default function Footer() {
 
   return (
     <footer className={classes.footer}>
-      &copy; {currentYear} Barbara Piękoś. Projekt i realizacja{" "}
-      <Link href={"https://domiweb.pl/"}>Domiweb</Link>
+      &copy; {currentYear} Barbara Piękoś. Projekt i realizacja
       <div className={classes.policy}>
         <a href="/polityka-prywatnosci.pdf" target="_blank">
           Polityka Prywatności
