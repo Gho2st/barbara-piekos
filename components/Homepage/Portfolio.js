@@ -71,25 +71,25 @@ export default function Portfolio() {
   const exhibits = [
     {
       title: "Podole-Górowa 61",
-      description: "olej na tekturze I 41 x 33 I 2025",
+      description: "olej na tekturze | 41 x 33 | 2025",
       text: `Arturek po powrocie z przedszkola powiedział: "Mamusiu, zaprosiłem kolegów do nas" - Dobrze, a powiedziałeś gdzie mieszkamy? - Tak. W Polsce. To było zabawne i zarazem wzruszające. Moją POLSKĄ, gdy miałam 3 lata, był drewniany dom z numerem 61 w Podolu-Górowej oraz rodzina i przedmioty, które ten dom wypełniały.`,
       image: "/obrazy2/1.jpeg",
     },
     {
       title: "Ingradient",
-      description: "13 x 18 I  2023",
+      description: "13 x 18 | 2023",
       text: ``,
       image: "/obrazy2/2.jpeg",
     },
     {
       title: "Dziękuję tato",
-      description: "olej na płótnie I 18 x 18 I 2022",
+      description: "olej na płótnie | 18 x 18 | 2022",
       text: ``,
       image: "/obrazy2/3.jpeg",
     },
     {
       title: "Autoportret przy sztaludze",
-      description: "olej na płótnie I 18 x 18 I 2023",
+      description: "olej na płótnie | 18 x 18 | 2023",
       text: ``,
       image: "/obrazy2/4.jpeg",
     },

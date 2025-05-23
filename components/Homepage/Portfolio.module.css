@@ -120,8 +120,8 @@
     gap: 4rem;
   }
   .exhibit {
-    flex-direction: column;
-    gap: 4rem;
+    flex-direction: column-reverse;
+    gap: 3rem;
   }
   .imageContainer {
     width: 100%;
