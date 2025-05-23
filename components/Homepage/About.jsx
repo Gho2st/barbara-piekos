@@ -31,8 +31,9 @@ export default function About() {
               marzenie o Akademii Sztuk Pięknych im. Jana Matejki w Krakowie. W
               2020 roku ukończyła studia będąc na wydziale malarstwa w pracowni
               Janusza Matuszewskiego. <br></br>
-              <br></br> Obecnie nadal mieszka na Sądeczyźnie, a malując obraz ma
-              przy sobie dwóch synków oraz męża, który wspiera i jest jej siłą.
+              <br></br> Obecnie nadal mieszka na Sądecczyźnie, a malując obraz
+              ma przy sobie dwóch synków oraz męża, który wspiera i jest jej
+              siłą.
             </p>
           </div>
         </div>
