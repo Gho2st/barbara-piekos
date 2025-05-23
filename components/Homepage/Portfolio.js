@@ -72,7 +72,7 @@ export default function Portfolio() {
     {
       title: "Podole-Górowa 61",
       description: "olej na tekturze | 41 x 33 | 2025",
-      text: `Arturek po powrocie z przedszkola powiedział: "Mamusiu, zaprosiłem kolegów do nas" - Dobrze, a powiedziałeś gdzie mieszkamy? - Tak. W Polsce. To było zabawne i zarazem wzruszające. Moją POLSKĄ, gdy miałam 3 lata, był drewniany dom z numerem 61 w Podolu-Górowej oraz rodzina i przedmioty, które ten dom wypełniały.`,
+      text: `Arturek po powrocie z przedszkola powiedział: "Mamusiu, zaprosiłem kolegów do nas" \n- Dobrze, a powiedziałeś gdzie mieszkamy? \n- Tak. W Polsce. \nTo było zabawne i zarazem wzruszające. Moją POLSKĄ, gdy miałam 3 lata, był drewniany dom z numerem 61 w Podolu-Górowej oraz rodzina i przedmioty, które ten dom wypełniały.`,
       image: "/obrazy2/1.jpeg",
     },
     {
@@ -220,7 +220,9 @@ export default function Portfolio() {
             <div className={classes.text}>
               <h3>{exhibit.title}</h3>
               <p>{exhibit.description}</p>
-              <p>{exhibit.text}</p>
+              {exhibit.text.split("\n").map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}{" "}
             </div>
             <div className={classes.imageContainer}>
               <Image
