@@ -9,7 +9,7 @@
 
 .portfolio__container h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -61,5 +61,76 @@
     min-height: 500px;
     object-fit: cover;
     max-height: 500px;
+  }
+}
+
+.container {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.exhibit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  padding: 2rem 9%;
+  background: rgb(251, 251, 251);
+}
+
+.text {
+  width: 70%;
+}
+
+.text h3 {
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.text p {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.imageContainer {
+  width: 40%;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+  background: white;
+}
+
+@media (max-width: 1200px) {
+  .imageContainer {
+    width: 50%;
+  }
+  .text h3 {
+    font-size: 2.3rem;
+  }
+  .text p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    gap: 4rem;
+  }
+  .exhibit {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .imageContainer {
+    width: 100%;
+  }
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+  .text h3 {
+    font-size: 1.8rem;
   }
 }

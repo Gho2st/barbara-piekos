@@ -68,6 +68,33 @@ export default function Portfolio() {
     "Ostatni obraz Barbary Piękoś - portfolio 22",
   ];
 
+  const exhibits = [
+    {
+      title: "Podole-Górowa 61",
+      description: "olej na tekturze I 41 x 33 I 2025",
+      text: `Arturek po powrocie z przedszkola powiedział: "Mamusiu, zaprosiłem kolegów do nas" - Dobrze, a powiedziałeś gdzie mieszkamy? - Tak. W Polsce. To było zabawne i zarazem wzruszające. Moją POLSKĄ, gdy miałam 3 lata, był drewniany dom z numerem 61 w Podolu-Górowej oraz rodzina i przedmioty, które ten dom wypełniały.`,
+      image: "/obrazy2/1.jpeg",
+    },
+    {
+      title: "Ingradient",
+      description: "13 x 18 I  2023",
+      text: ``,
+      image: "/obrazy2/2.jpeg",
+    },
+    {
+      title: "Dziękuję tato",
+      description: "olej na płótnie I 18 x 18 I 2022",
+      text: ``,
+      image: "/obrazy2/3.jpeg",
+    },
+    {
+      title: "Autoportret przy sztaludze",
+      description: "olej na płótnie I 18 x 18 I 2023",
+      text: ``,
+      image: "/obrazy2/4.jpeg",
+    },
+  ];
+
   // Fetch image dimensions using browser Image API
   useEffect(() => {
     const fetchDimensions = async () => {
@@ -179,6 +206,33 @@ export default function Portfolio() {
         <p className={classes.description}>
           *Kliknij w zdjęcie aby zobaczyć pełnoekranowy podgląd
         </p>
+      </div>
+
+      {/* more photos */}
+      <div className={classes.container}>
+        {exhibits.map((exhibit, idx) => (
+          <div
+            key={idx}
+            className={`${classes.exhibit} ${
+              idx % 2 === 0 ? classes.normal : classes.reversed
+            }`}
+          >
+            <div className={classes.text}>
+              <h3>{exhibit.title}</h3>
+              <p>{exhibit.description}</p>
+              <p>{exhibit.text}</p>
+            </div>
+            <div className={classes.imageContainer}>
+              <Image
+                src={exhibit.image}
+                alt={exhibit.title}
+                layout="responsive"
+                width={500}
+                height={500}
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

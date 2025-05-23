@@ -49,6 +49,15 @@ export default function Exhibitions() {
           </h4>
           Wystawa pokonkursowa - 1 miejsce <br></br> (SBP Nowy Sącz ) 2023
         </li>
+        <li>
+          <h4>13.Triennale małych form malarskich</h4> Wystawa pokonkursowa
+          <br></br> (Galeria Sztuki Wozownia w Toruniu) 2025
+          <br></br>
+          <Button
+            link="https://wozownia.pl/13-triennale-malych-form-malarskich/"
+            text="Czytaj więcej"
+          />
+        </li>
       </ul>
       <h3>Indywidualne</h3>
       <ul>
