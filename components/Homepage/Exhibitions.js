@@ -1,6 +1,5 @@
-import Link from "next/link";
-import classes from "./Exhibitions.module.css";
 import Button from "../UI/Buttons/Button";
+import classes from "./Exhibitions.module.css";
 
 export default function Exhibitions() {
   return (
@@ -78,6 +77,14 @@ export default function Exhibitions() {
           Sącz) 2023 <br></br>
           <Button
             link="https://sbp.nowysacz.pl/dojrzewanie-wystawa-prac-barbary-piekos/"
+            text="Czytaj więcej"
+          />
+        </li>
+        <li>
+          <h4>Kolor serca</h4> Galeria Sztuki SOKÓŁ FOYER<br></br> (Nowy
+          Sącz) 2026 <br></br>
+          <Button
+            link="https://nowosadecki24.pl/20260128516232/kolor-serca-obrazy-barbary-piekos-zagrzaly-galerie-sokol-i-poruszyly-publicznosc"
             text="Czytaj więcej"
           />
         </li>
